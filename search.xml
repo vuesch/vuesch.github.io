@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ECMAScript5.1</title>
+      <link href="/posts/ES5.html"/>
+      <url>/posts/ES5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="ES5简介"><a href="#ES5简介" class="headerlink" title="ES5简介"></a>ES5简介</h2><p>ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict mode）”。</p><h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><ul><li>Opera 11.60</li><li>IE9+ （IE9不支持严格模式）</li><li>Firefox 4</li><li>Safari 5.1+</li><li>Chrome 13</li></ul><p><strong>如果想在低版本浏览器中支持严格模式，需要下载shim</strong></p><h2 id="ES5的严格模式"><a href="#ES5的严格模式" class="headerlink" title="ES5的严格模式"></a>ES5的严格模式</h2><p>严格模式给作者提供了选择一个限制性更强语言变种的方式–给作者提供额外的可靠性给用户提供额外的安全性。在JS文件或者函数的顶部添加”use strict”即可启用严格模式。因为”use strict”是一个字符串，所以会被旧版浏览器忽略。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MSDN中的严格模式介绍</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ES5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Typescript教程</title>
       <link href="/posts/undefined.html"/>
       <url>/posts/undefined.html</url>
@@ -66,7 +85,7 @@
       <link href="/posts/use-svn-in-Mac.html"/>
       <url>/posts/use-svn-in-Mac.html</url>
       
-        <content type="html"><![CDATA[<pre class=" language-javascript"><code class="language-javascript"></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>在 Windows 环境中，我们一般使用 TortoiseSVN 来搭建 svn 环境。在 Mac 环境下，由于 Mac 自带了 svn 的服务器端和客户端功能，所以我们可以在不装任何第三方软件的前提下使用 svn 功能，不过还需做一下简单的配置。</p><p>那么，如何在Mac环境下搭建svn服务器端环境呢</p><h4 id="创建代码仓库，用来存储客户端所上传的代码"><a href="#创建代码仓库，用来存储客户端所上传的代码" class="headerlink" title="创建代码仓库，用来存储客户端所上传的代码"></a>创建代码仓库，用来存储客户端所上传的代码</h4>]]></content>
       
       
       

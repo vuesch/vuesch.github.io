@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//vuesch.github.io/"/>
-  <updated>2019-09-25T08:17:55.307Z</updated>
+  <updated>2019-10-28T08:50:16.280Z</updated>
   <id>//vuesch.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ECMAScript5.1</title>
+    <link href="//vuesch.github.io/posts/ES5.html"/>
+    <id>//vuesch.github.io/posts/ES5.html</id>
+    <published>2019-10-28T07:44:08.000Z</published>
+    <updated>2019-10-28T08:50:16.280Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;ES5简介&quot;&gt;&lt;a href=&quot;#ES5简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
+    
+  </entry>
   
   <entry>
     <title>Typescript教程</title>
@@ -79,7 +103,7 @@
     <link href="//vuesch.github.io/posts/use-svn-in-Mac.html"/>
     <id>//vuesch.github.io/posts/use-svn-in-Mac.html</id>
     <published>2019-09-25T03:21:31.000Z</published>
-    <updated>2019-10-23T07:26:59.606Z</updated>
+    <updated>2019-10-28T07:51:51.357Z</updated>
     
     <summary type="html">
     
@@ -87,7 +111,7 @@
       
         
         
-          &lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+          &lt;p&gt;在 Windows 环境中，我们一般使用 TortoiseSVN 来搭建 svn 环境。在 Mac 环境下，由于 Mac 自带了 svn 的服务器端和客户端功能，所以我们可以在不装任何第三方软件的前提下使用 svn
         
       
     
