@@ -399,14 +399,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        221
+                        649
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -432,7 +432,58 @@
 </ul>
 <p><strong>如果想在低版本浏览器中支持严格模式，需要下载shim</strong></p>
 <h2 id="ES5的严格模式"><a href="#ES5的严格模式" class="headerlink" title="ES5的严格模式"></a>ES5的严格模式</h2><p>严格模式给作者提供了选择一个限制性更强语言变种的方式–给作者提供额外的可靠性给用户提供额外的安全性。在JS文件或者函数的顶部添加”use strict”即可启用严格模式。因为”use strict”是一个字符串，所以会被旧版浏览器忽略。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MSDN中的严格模式介绍</a></p>
+<h2 id="JSON格式"><a href="#JSON格式" class="headerlink" title="JSON格式"></a>JSON格式</h2><p>ES5提供一个全局的<strong>JSON</strong>对象，用来序列化(JSON.stringfy)和反序列化(JSON.parse)对象为JSON格式。<br>对于老的浏览器，可以考虑使用Dougulas Crockford的<strong>json2.js</strong>，可以让旧的浏览器实现同样的功能（原始支持功能测试后）。</p>
+<p><strong>JSON.parse(text [, reviever])</strong>接受文本(JSON格式)并转换成一个ECMAScript值。该方法可选的参数是有带有<strong>key</strong>和<strong>value</strong>两个参数的函数，作用是过滤和转换返回值。<br>例如：</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> result <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">"string"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>  <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><strong>JSON.stringfy(value [, replacer [, space]])</strong>允许作者接受一个ECMAScript值然后转化成JSON格式的字符串。在最简单的形式中，<strong>JSON.stringfy</strong>接受一个值返回一个字符串。<br>例如：</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> zs <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>age<span class="token punctuation">:</span><span class="token string">"aaa"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token keyword">typeof</span> zs
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// string</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>zs<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {"age":"18"}</span></code></pre>
+<p>如果我们需要改变字符串化的方式，或是对我们选择的提供过滤，我们可以将其传给<strong>replacer</strong>函数。<br>例如：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"second"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string">"third"</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span>
 
+<span class="token keyword">var</span> res <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> undefined<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//{"first":1,"second":2}</span></code></pre>
+<p>如果<strong>replacer</strong>函数返回<strong>undefined</strong>，则键值对就不会包含在最终的JSON中。我们同样可以传递一个<strong>space</strong>参数以便获得返回结果的可读性帮助。<strong>space</strong>参数可以是个数字，表明缩进的空格数。如果参数是个超过10的数值，或是超过10个字符的字符串，将导致取10或是截取前10个字符。<br>例如：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"second"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token string">"third"</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> res <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> undefined<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true">/** 
+{
+  "first": 1,
+  "second": 2
+}
+**/</span></code></pre>
+<h2 id="添加对象"><a href="#添加对象" class="headerlink" title="添加对象"></a>添加对象</h2>
             </div>
             <hr/>
 
@@ -869,7 +920,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">3.6k</span>
+                <span class="white-color">4.1k</span>
             
 
             
