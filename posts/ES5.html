@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="ECMAScript5.1, 没有老婆的饼">
-    <meta name="description" content="ES5简介ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict m">
+    <meta name="description" content="一、ES5简介ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -399,14 +399,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        649
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        4 分
                     </div>
                     
                 
@@ -422,8 +422,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ES5简介"><a href="#ES5简介" class="headerlink" title="ES5简介"></a>ES5简介</h2><p>ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict mode）”。</p>
-<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><ul>
+                <h2 id="一、ES5简介"><a href="#一、ES5简介" class="headerlink" title="一、ES5简介"></a>一、ES5简介</h2><p>ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict mode）”。</p>
+<h2 id="二、浏览器支持"><a href="#二、浏览器支持" class="headerlink" title="二、浏览器支持"></a>二、浏览器支持</h2><ul>
 <li>Opera 11.60</li>
 <li>IE9+ （IE9不支持严格模式）</li>
 <li>Firefox 4</li>
@@ -431,8 +431,8 @@
 <li>Chrome 13</li>
 </ul>
 <p><strong>如果想在低版本浏览器中支持严格模式，需要下载shim</strong></p>
-<h2 id="ES5的严格模式"><a href="#ES5的严格模式" class="headerlink" title="ES5的严格模式"></a>ES5的严格模式</h2><p>严格模式给作者提供了选择一个限制性更强语言变种的方式–给作者提供额外的可靠性给用户提供额外的安全性。在JS文件或者函数的顶部添加”use strict”即可启用严格模式。因为”use strict”是一个字符串，所以会被旧版浏览器忽略。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MSDN中的严格模式介绍</a></p>
-<h2 id="JSON格式"><a href="#JSON格式" class="headerlink" title="JSON格式"></a>JSON格式</h2><p>ES5提供一个全局的<strong>JSON</strong>对象，用来序列化(JSON.stringfy)和反序列化(JSON.parse)对象为JSON格式。<br>对于老的浏览器，可以考虑使用Dougulas Crockford的<strong>json2.js</strong>，可以让旧的浏览器实现同样的功能（原始支持功能测试后）。</p>
+<h2 id="三、ES5的严格模式"><a href="#三、ES5的严格模式" class="headerlink" title="三、ES5的严格模式"></a>三、ES5的严格模式</h2><p>严格模式给作者提供了选择一个限制性更强语言变种的方式–给作者提供额外的可靠性给用户提供额外的安全性。在JS文件或者函数的顶部添加”use strict”即可启用严格模式。因为”use strict”是一个字符串，所以会被旧版浏览器忽略。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MSDN中的严格模式介绍</a></p>
+<h2 id="四、JSON格式"><a href="#四、JSON格式" class="headerlink" title="四、JSON格式"></a>四、JSON格式</h2><p>ES5提供一个全局的<strong>JSON</strong>对象，用来序列化(JSON.stringfy)和反序列化(JSON.parse)对象为JSON格式。<br>对于老的浏览器，可以考虑使用Dougulas Crockford的<strong>json2.js</strong>，可以让旧的浏览器实现同样的功能（原始支持功能测试后）。</p>
 <p><strong>JSON.parse(text [, reviever])</strong>接受文本(JSON格式)并转换成一个ECMAScript值。该方法可选的参数是有带有<strong>key</strong>和<strong>value</strong>两个参数的函数，作用是过滤和转换返回值。<br>例如：</p>
 <pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> result <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">"string"</span><span class="token punctuation">)</span>
@@ -483,7 +483,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
   "second": 2
 }
 **/</span></code></pre>
-<h2 id="添加对象"><a href="#添加对象" class="headerlink" title="添加对象"></a>添加对象</h2>
+<h2 id="五、附加对象"><a href="#五、附加对象" class="headerlink" title="五、附加对象"></a>五、附加对象</h2><p>以下方法是添加到<strong>Object</strong>上的构造器：</p>
+<ul>
+<li><code>Object.assign()</code> 通过复制一个或多个对象来创建一个新的对象。</li>
+<li><code>Object.create()</code> 使用指定的原型对象和属性创建一个新对象。</li>
+<li><code>Object.defineProperty()</code> 给对象添加一个属性并指定该属性的配置。</li>
+<li><code>Object.defineProperties()</code> 给对象添加多个属性并分别指定它们的配置。</li>
+<li><code>Object.entries()</code> 返回给定对象自身可枚举属性的 [key, value] 数组。</li>
+<li><code>Object.freeze()</code> 冻结对象：其他代码不能删除或更改任何属性。</li>
+<li><code>Object.getOwnPropertyDescriptor()</code> 返回对象指定的属性配置。</li>
+<li><code>Object.getOwnPropertyNames()</code> 返回一个数组，它包含了指定对象所有的可枚举或不可枚举的属性名。</li>
+<li><code>Object.getOwnPropertySymbols()</code> 返回一个数组，它包含了指定对象自身所有的符号属性。</li>
+<li><code>Object.getPrototypeOf()</code>返回指定对象的原型对象。</li>
+<li><code>Object.is()</code> 比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。</li>
+<li><code>Object.isExtensible()</code> 判断对象是否可扩展。</li>
+<li><code>Object.isFrozen()</code> 判断对象是否已经冻结。</li>
+<li><code>Object.isSealed()</code> 判断对象是否已经密封。</li>
+<li><code>Object.keys()</code> 返回一个包含所有给定对象自身可枚举属性名称的数组。</li>
+<li><code>Object.preventExtensions()</code> 防止对象的任何扩展。</li>
+<li><code>Object.seal()</code> 防止其他代码删除对象的属性。</li>
+<li><code>Object.setPrototypeOf()</code> 设置对象的原型（即内部 [[Prototype]] 属性）。</li>
+<li><code>Object.values()</code> 返回给定对象自身可枚举值的数组。</li>
+</ul>
+<p>具体参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">Object构造函数的方法</a></p>
+<h2 id="六、额外的数组"><a href="#六、额外的数组" class="headerlink" title="六、额外的数组"></a>六、额外的数组</h2><p>以下方法添加到了<strong>Array.prototype</strong>对象上：</p>
+
             </div>
             <hr/>
 
@@ -920,7 +944,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">4.1k</span>
+                <span class="white-color">4.5k</span>
             
 
             
