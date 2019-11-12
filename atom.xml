@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//vuesch.github.io/"/>
-  <updated>2019-11-06T07:53:57.058Z</updated>
+  <updated>2019-11-07T07:41:52.484Z</updated>
   <id>//vuesch.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="//vuesch.github.io/posts/ES5.html"/>
     <id>//vuesch.github.io/posts/ES5.html</id>
     <published>2019-10-28T07:44:08.000Z</published>
-    <updated>2019-11-06T07:53:57.058Z</updated>
+    <updated>2019-11-07T07:41:52.484Z</updated>
     
     <summary type="html">
     
@@ -45,12 +45,14 @@
     <link href="//vuesch.github.io/posts/undefined.html"/>
     <id>//vuesch.github.io/posts/undefined.html</id>
     <published>2019-09-25T08:17:43.000Z</published>
-    <updated>2019-09-25T08:17:55.307Z</updated>
+    <updated>2019-11-12T06:09:55.605Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="TypeScript" scheme="//vuesch.github.io/tags/TypeScript/"/>
     
   </entry>
   
@@ -59,12 +61,14 @@
     <link href="//vuesch.github.io/posts/undefined.html"/>
     <id>//vuesch.github.io/posts/undefined.html</id>
     <published>2019-09-25T03:46:09.000Z</published>
-    <updated>2019-09-25T03:46:09.758Z</updated>
+    <updated>2019-11-12T06:13:01.709Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="webpack" scheme="//vuesch.github.io/tags/webpack/"/>
     
   </entry>
   
@@ -73,12 +77,14 @@
     <link href="//vuesch.github.io/posts/undefined.html"/>
     <id>//vuesch.github.io/posts/undefined.html</id>
     <published>2019-09-25T03:45:16.000Z</published>
-    <updated>2019-09-25T03:45:16.866Z</updated>
+    <updated>2019-11-12T06:13:39.605Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="Vue" scheme="//vuesch.github.io/tags/Vue/"/>
     
   </entry>
   
