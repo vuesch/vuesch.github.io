@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ECMAScript5.1, 没有老婆的饼">
-    <meta name="description" content="一、ES5简介ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict">
+    <meta name="keywords" content="深入浅出Node, 没有老婆的饼">
+    <meta name="description" content="深入浅出Node | 没有老婆的饼 | 前端小学生">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ECMAScript5.1 | 没有老婆的饼 | 前端小学生</title>
+    <title>深入浅出Node | 没有老婆的饼 | 前端小学生</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ECMAScript5.1
+                        深入浅出Node
                     </div>
                 </div>
             </div>
@@ -377,8 +377,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ES5/" target="_blank">
-                                <span class="chip bg-color">ES5</span>
+                            <a href="/tags/Node/" target="_blank">
+                                <span class="chip bg-color">Node</span>
                             </a>
                         
                     </div>
@@ -392,21 +392,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-28
+                    2020-03-06
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        0
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -422,118 +422,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、ES5简介"><a href="#一、ES5简介" class="headerlink" title="一、ES5简介"></a>一、ES5简介</h2><p>ES5是ECMAScript标准最新修正。与H5规范进程本质类似，ES5通过对现有JavaScript方法添加语句和原生ECNAScript对象做合并实现标准化。ES5还引入了一个语法的严格变种，被称为“严格模式（strict mode）”。</p>
-<h2 id="二、浏览器支持"><a href="#二、浏览器支持" class="headerlink" title="二、浏览器支持"></a>二、浏览器支持</h2><ul>
-<li>Opera 11.60</li>
-<li>IE9+ （IE9不支持严格模式）</li>
-<li>Firefox 4</li>
-<li>Safari 5.1+</li>
-<li>Chrome 13</li>
-</ul>
-<p><strong>如果想在低版本浏览器中支持严格模式，需要下载shim</strong></p>
-<h2 id="三、ES5的严格模式"><a href="#三、ES5的严格模式" class="headerlink" title="三、ES5的严格模式"></a>三、ES5的严格模式</h2><p>严格模式给作者提供了选择一个限制性更强语言变种的方式–给作者提供额外的可靠性给用户提供额外的安全性。在JS文件或者函数的顶部添加”use strict”即可启用严格模式。因为”use strict”是一个字符串，所以会被旧版浏览器忽略。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MSDN中的严格模式介绍</a></p>
-<h2 id="四、JSON格式"><a href="#四、JSON格式" class="headerlink" title="四、JSON格式"></a>四、JSON格式</h2><p>ES5提供一个全局的<strong>JSON</strong>对象，用来序列化(JSON.stringfy)和反序列化(JSON.parse)对象为JSON格式。<br>对于老的浏览器，可以考虑使用Dougulas Crockford的<strong>json2.js</strong>，可以让旧的浏览器实现同样的功能（原始支持功能测试后）。</p>
-<p><strong>JSON.parse(text [, reviever])</strong>接受文本(JSON格式)并转换成一个ECMAScript值。该方法可选的参数是有带有<strong>key</strong>和<strong>value</strong>两个参数的函数，作用是过滤和转换返回值。<br>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> result <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"a"</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">==</span> <span class="token string">"string"</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span>  <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> value<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
-<p><strong>JSON.stringfy(value [, replacer [, space]])</strong>允许作者接受一个ECMAScript值然后转化成JSON格式的字符串。在最简单的形式中，<strong>JSON.stringfy</strong>接受一个值返回一个字符串。<br>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> zs <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>age<span class="token punctuation">:</span><span class="token string">"aaa"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token keyword">typeof</span> zs
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// string</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>zs<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// {"age":"18"}</span></code></pre>
-<p>如果我们需要改变字符串化的方式，或是对我们选择的提供过滤，我们可以将其传给<strong>replacer</strong>函数。<br>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token string">"second"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token string">"third"</span><span class="token punctuation">:</span> <span class="token number">3</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> res <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> undefined<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//{"first":1,"second":2}</span></code></pre>
-<p>如果<strong>replacer</strong>函数返回<strong>undefined</strong>，则键值对就不会包含在最终的JSON中。我们同样可以传递一个<strong>space</strong>参数以便获得返回结果的可读性帮助。<strong>space</strong>参数可以是个数字，表明缩进的空格数。如果参数是个超过10的数值，或是超过10个字符的字符串，将导致取10或是截取前10个字符。<br>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"first"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token string">"second"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token string">"third"</span><span class="token punctuation">:</span> <span class="token number">3</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> res <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> undefined<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> 
-<span class="token comment" spellcheck="true">/** 
-{
-  "first": 1,
-  "second": 2
-}
-**/</span></code></pre>
-<h2 id="五、附加对象"><a href="#五、附加对象" class="headerlink" title="五、附加对象"></a>五、附加对象</h2><p>以下方法是添加到<strong>Object</strong>上的构造器：</p>
-<ul>
-<li><code>Object.assign()</code> 通过复制一个或多个对象来创建一个新的对象。</li>
-<li><code>Object.create()</code> 使用指定的原型对象和属性创建一个新对象。</li>
-<li><code>Object.defineProperty()</code> 给对象添加一个属性并指定该属性的配置。</li>
-<li><code>Object.defineProperties()</code> 给对象添加多个属性并分别指定它们的配置。</li>
-<li><code>Object.entries()</code> 返回给定对象自身可枚举属性的 [key, value] 数组。</li>
-<li><code>Object.freeze()</code> 冻结对象：其他代码不能删除或更改任何属性。</li>
-<li><code>Object.getOwnPropertyDescriptor()</code> 返回对象指定的属性配置。</li>
-<li><code>Object.getOwnPropertyNames()</code> 返回一个数组，它包含了指定对象所有的可枚举或不可枚举的属性名。</li>
-<li><code>Object.getOwnPropertySymbols()</code> 返回一个数组，它包含了指定对象自身所有的符号属性。</li>
-<li><code>Object.getPrototypeOf()</code>返回指定对象的原型对象。</li>
-<li><code>Object.is()</code> 比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。</li>
-<li><code>Object.isExtensible()</code> 判断对象是否可扩展。</li>
-<li><code>Object.isFrozen()</code> 判断对象是否已经冻结。</li>
-<li><code>Object.isSealed()</code> 判断对象是否已经密封。</li>
-<li><code>Object.keys()</code> 返回一个包含所有给定对象自身可枚举属性名称的数组。</li>
-<li><code>Object.preventExtensions()</code> 防止对象的任何扩展。</li>
-<li><code>Object.seal()</code> 防止其他代码删除对象的属性。</li>
-<li><code>Object.setPrototypeOf()</code> 设置对象的原型（即内部 [[Prototype]] 属性）。</li>
-<li><code>Object.values()</code> 返回给定对象自身可枚举值的数组。</li>
-</ul>
-<p>具体参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">Object构造函数的方法</a></p>
-<h2 id="六、额外的数组"><a href="#六、额外的数组" class="headerlink" title="六、额外的数组"></a>六、额外的数组</h2><p>具体参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">Array的方法</a></p>
-<h2 id="七、Function-prototype-bind-thisArg-arg1-arg2-…"><a href="#七、Function-prototype-bind-thisArg-arg1-arg2-…" class="headerlink" title="七、Function.prototype.bind(thisArg[,arg1[,arg2[, …]]])"></a>七、Function.prototype.bind(thisArg[,arg1[,arg2[, …]]])</h2><p><code>Function.prototype.bind()</code>返回一个新的函数对象，在<code>bind()</code>被调用时，这个新函数的this被bind的第一个参数指定，其余的参数将作为新函数的参数供调用时使用。<br>具体使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">Function.prototype.bind()详解</a></p>
-<h2 id="八、This指针的使用"><a href="#八、This指针的使用" class="headerlink" title="八、This指针的使用"></a>八、This指针的使用</h2><p>通俗来讲，就是谁调用<code>this</code>，<code>this</code>就指向谁。<br>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 1、常规的this指向</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>m <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-    m <span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-    test<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>m<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-obj<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 执行test的时候，this被obj调用，所以this指向obj</span>
-
-<span class="token comment" spellcheck="true">// 2、闭包中的this指向</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>m <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-    m <span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-    test<span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>m<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>m<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 100 1000</span>
-构造函数中的<span class="token keyword">this</span>主动权比较大。</code></pre>
-<h2 id="九、变量的作用域和闭包"><a href="#九、变量的作用域和闭包" class="headerlink" title="九、变量的作用域和闭包"></a>九、变量的作用域和闭包</h2><p>js是函数级作用域，在内部的变量，内部都能访问，外部不能访问内部的变量，内部能访问外部的变量。</p>
-
+                
             </div>
             <hr/>
 
@@ -691,9 +580,9 @@ obj<span class="token punctuation">.</span><span class="token function">test</sp
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ECMAScript5.1》
+                    《深入浅出Node》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/posts/ES5.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/posts/Node.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 vuesch
             </a> 采用
@@ -734,7 +623,7 @@ obj<span class="token punctuation">.</span><span class="token function">test</sp
         repo: 'vuesch.github.io',
         owner: 'vuesch',
         admin: "没有老婆的饼",
-        id: '2019-10-28T15-44-08',
+        id: '2020-03-06T00-37-02',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -753,7 +642,7 @@ obj<span class="token punctuation">.</span><span class="token function">test</sp
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Oct 28 2019 15:44:08 GMT+0800',
+    id: 'Fri Mar 06 2020 00:37:02 GMT+0800',
     owner: 'vuesch',
     repo: 'vuesch.github.io',
     oauth: {
@@ -777,9 +666,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/Node.html">
                     <div class="card-image">
@@ -797,9 +687,9 @@ gitment.render('gitment-content');
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -808,6 +698,7 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -826,24 +717,24 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/undefined.html">
+                <a href="/posts/ES5.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Typescript教程">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ECMAScript5.1">
                         
-                        <span class="card-title">Typescript教程</span>
+                        <span class="card-title">ECMAScript5.1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ts从入门到精通
+                            ES5的学习之路
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-28
                             </span>
                         <span class="publish-author">
                             
@@ -856,8 +747,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TypeScript/" target="_blank">
-                        <span class="chip bg-color">TypeScript</span>
+                    <a href="/tags/ES5/" target="_blank">
+                        <span class="chip bg-color">ES5</span>
                     </a>
                     
                 </div>
