@@ -399,14 +399,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        8 分
                     </div>
                     
                 
@@ -437,8 +437,55 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"发送Ajax结束"</span><span class="token punctuation">)</span></code></pre>
 <p>如上述代码，熟悉异步的朋友一定知道，“收到响应”是在“发送Ajax结束”之后输出的，因为在调用<code>$.post()</code>后，后续的代码是立即执行的，而“收到响应”的时间是不固定的，我们只知道“收到响应”是在“发送Ajax结束”之后执行，但是并不知道“收到响应”的具体时间，这和<strong>异步调用</strong>中对于结果的捕获规则是相符的，具体是什么规则呢，简言之就是，你女朋友在忙的时候会告诉你，我忙完了会联系你，你不用给我打电话，这就是规则。（(⊙o⊙)…女人应该就是这样子的😂）</p>
-<p>再附上一张经典的Ajax调用图以供大家参考：<br><img src="../assets/ajax.jpg" alt="经典的Ajax调用"> “经典的Ajax调用”</p>
-<h4 id="1-4-2-事件与回调函数"><a href="#1-4-2-事件与回调函数" class="headerlink" title="1.4.2 事件与回调函数"></a>1.4.2 事件与回调函数</h4><h4 id="1-4-3-单线程"><a href="#1-4-3-单线程" class="headerlink" title="1.4.3 单线程"></a>1.4.3 单线程</h4><h4 id="1-4-4-跨平台"><a href="#1-4-4-跨平台" class="headerlink" title="1.4.4 跨平台"></a>1.4.4 跨平台</h4><h3 id="1-5-Node的应用场景"><a href="#1-5-Node的应用场景" class="headerlink" title="1.5 Node的应用场景"></a>1.5 Node的应用场景</h3><h4 id="1-5-1-I-O密集型"><a href="#1-5-1-I-O密集型" class="headerlink" title="1.5.1 I/O密集型"></a>1.5.1 I/O密集型</h4><h4 id="1-5-2-是否不擅长CPU密集型业务"><a href="#1-5-2-是否不擅长CPU密集型业务" class="headerlink" title="1.5.2 是否不擅长CPU密集型业务"></a>1.5.2 是否不擅长CPU密集型业务</h4><h4 id="1-5-3-与遗留系统和平共处"><a href="#1-5-3-与遗留系统和平共处" class="headerlink" title="1.5.3 与遗留系统和平共处"></a>1.5.3 与遗留系统和平共处</h4><h4 id="1-5-4-分布式应用"><a href="#1-5-4-分布式应用" class="headerlink" title="1.5.4 分布式应用"></a>1.5.4 分布式应用</h4><h3 id="1-6-Node的使用者"><a href="#1-6-Node的使用者" class="headerlink" title="1.6 Node的使用者"></a>1.6 Node的使用者</h3><hr>
+<p>再附上一张经典的Ajax调用图以供大家参考：<br><img src="../assets/ajax.jpg" alt="经典的Ajax调用"> </p>
+<p>在Node中，异步I/O也是随处可见的，就拿简单的读取文件为例，它和Ajax的调用方式是极其类似的：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"/path"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"读取文件完成"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"发起读取文件"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>同样，在上述代码中的“读取文件完成”是在“发起读取文件”之后输出的，“读取文件完成”也取决于读取文件的异步调用何时结束。<br>结尾再附上一张经典的异步调用图：<br><img src="../assets/asynchronous.jpg" alt="经典的异步调用"> </p>
+<p>在Node中，绝大部分操作都是以异步的方式进行的，因为这样的话每个调用都无需等待之前的I/O调用结束，这样可以在编程模型上极大的提升效率，比如下面的代码：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"/path1"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"读取文件1完成"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"/path2"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"读取文件2完成"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>在上述代码中，两个文件读取任务的耗时取决于最慢的那个文件读取的耗时，而对于同步I/O而言，它们的耗时是两个任务的耗时之和，所以在这里能很明显地感受到异步带来的优势，确实是提高了效率。</p>
+<h4 id="1-4-2-事件与回调函数"><a href="#1-4-2-事件与回调函数" class="headerlink" title="1.4.2 事件与回调函数"></a>1.4.2 事件与回调函数</h4><p>随着Web2.0时代的到来，JavaScript在前端中已经成了主宰一般的存在，随之而来的事件也得到了广泛的应用。</p>
+<p>事件的编程方式具有<code>轻量级</code>、<code>松耦合</code>、<code>只关注事务点</code>等优势，但是在多个异步任务的场景下，事件与事件之间项目独立，如何协作就成了一个老大难问题。<br>先看下面的代码，第一段代码是Node创建一个Web服务器，并监听8080端口：</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">var</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> queryString <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"queryString"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// 侦听服务器的request事件</span>
+ http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> postData <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    req<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 侦听请求的data事件</span>
+    req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        postData <span class="token operator">+</span><span class="token operator">=</span> chunk<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 侦听请求的end事件</span>
+    req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>postData<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"服务器启动完成"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>第二段代码是为Ajax绑定了success事件，只关心请求成功时的业务逻辑：</p>
+<pre class=" language-javascript"><code class="language-javascript">$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">'url'</span><span class="token punctuation">:</span> <span class="token string">"/url"</span><span class="token punctuation">,</span>
+    <span class="token string">'method'</span><span class="token punctuation">:</span> <span class="token string">"POOST"</span><span class="token punctuation">,</span>
+    <span class="token string">'data'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">'success'</span><span class="token punctuation">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// success事件</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>从上边的代码可以看出，回调函数是无处不在的。这是因为在JavaScript中，回调函数是一等公民，可以将函数作为对象传递给方法作为实参进行调用。不过回调函数使得很多习惯了同步思路的开发人员很头疼，使用起来也不是那么顺手，因为在他们的思想里程序一定是自上而下执行的，但是回调函数的出现使得代码的编写顺序与执行顺序没有了关系，所以WTF😒。</p>
+<h4 id="1-4-3-单线程"><a href="#1-4-3-单线程" class="headerlink" title="1.4.3 单线程"></a>1.4.3 单线程</h4><h4 id="1-4-4-跨平台"><a href="#1-4-4-跨平台" class="headerlink" title="1.4.4 跨平台"></a>1.4.4 跨平台</h4><h3 id="1-5-Node的应用场景"><a href="#1-5-Node的应用场景" class="headerlink" title="1.5 Node的应用场景"></a>1.5 Node的应用场景</h3><h4 id="1-5-1-I-O密集型"><a href="#1-5-1-I-O密集型" class="headerlink" title="1.5.1 I/O密集型"></a>1.5.1 I/O密集型</h4><h4 id="1-5-2-是否不擅长CPU密集型业务"><a href="#1-5-2-是否不擅长CPU密集型业务" class="headerlink" title="1.5.2 是否不擅长CPU密集型业务"></a>1.5.2 是否不擅长CPU密集型业务</h4><h4 id="1-5-3-与遗留系统和平共处"><a href="#1-5-3-与遗留系统和平共处" class="headerlink" title="1.5.3 与遗留系统和平共处"></a>1.5.3 与遗留系统和平共处</h4><h4 id="1-5-4-分布式应用"><a href="#1-5-4-分布式应用" class="headerlink" title="1.5.4 分布式应用"></a>1.5.4 分布式应用</h4><h3 id="1-6-Node的使用者"><a href="#1-6-Node的使用者" class="headerlink" title="1.6 Node的使用者"></a>1.6 Node的使用者</h3><hr>
 <h2 id="第2章-模块机制"><a href="#第2章-模块机制" class="headerlink" title="第2章 模块机制"></a>第2章 模块机制</h2><h2 id="第3章-异步I-O"><a href="#第3章-异步I-O" class="headerlink" title="第3章 异步I/O"></a>第3章 异步I/O</h2><h2 id="第4章-异步编程"><a href="#第4章-异步编程" class="headerlink" title="第4章 异步编程"></a>第4章 异步编程</h2><h2 id="第5章-内存控制"><a href="#第5章-内存控制" class="headerlink" title="第5章 内存控制"></a>第5章 内存控制</h2><h2 id="第6章-理解Buffer"><a href="#第6章-理解Buffer" class="headerlink" title="第6章 理解Buffer"></a>第6章 理解Buffer</h2><h2 id="第7章-网络编程"><a href="#第7章-网络编程" class="headerlink" title="第7章 网络编程"></a>第7章 网络编程</h2><h2 id="第8章-构建Web应用"><a href="#第8章-构建Web应用" class="headerlink" title="第8章 构建Web应用"></a>第8章 构建Web应用</h2><h2 id="第9章-玩转进程"><a href="#第9章-玩转进程" class="headerlink" title="第9章 玩转进程"></a>第9章 玩转进程</h2><h2 id="第10章-测试"><a href="#第10章-测试" class="headerlink" title="第10章 测试"></a>第10章 测试</h2><h2 id="第11章-产品化"><a href="#第11章-产品化" class="headerlink" title="第11章 产品化"></a>第11章 产品化</h2>
             </div>
             <hr/>
@@ -687,27 +734,24 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/undefined.html">
+                <a href="/posts/es6.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="ES6标准入门">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">ES6标准入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            $.post("/url",{title : '小白的Node之路'},function (data) {
-    console.log("get response")
-});
-console.log("send ajax over")
+                            ES6
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-08
                         </span>
                         <span class="publish-author">
                             
@@ -716,6 +760,14 @@ console.log("send ajax over")
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ES6/" target="_blank">
+                        <span class="chip bg-color">ES6</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -877,7 +929,7 @@ console.log("send ajax over")
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">6.4k</span>
+                <span class="white-color">7.1k</span>
             
 
             

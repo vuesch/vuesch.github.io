@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//vuesch.github.io/"/>
-  <updated>2020-03-07T15:59:16.765Z</updated>
+  <updated>2020-03-08T08:05:23.337Z</updated>
   <id>//vuesch.github.io/</id>
   
   <author>
@@ -17,27 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="//vuesch.github.io/posts/undefined.html"/>
-    <id>//vuesch.github.io/posts/undefined.html</id>
-    <published>2020-03-07T15:56:34.673Z</published>
-    <updated>2020-03-07T15:59:16.765Z</updated>
+    <title>ES6标准入门</title>
+    <link href="//vuesch.github.io/posts/es6.html"/>
+    <id>//vuesch.github.io/posts/es6.html</id>
+    <published>2020-03-08T08:03:09.000Z</published>
+    <updated>2020-03-08T08:05:23.337Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          $.post(&quot;/url&quot;,{title : &#39;小白的Node之路&#39;},function (data) {
-    console.log(&quot;get response&quot;)
-});
-console.log(&quot;send ajax
-        
-      
-    
     </summary>
     
+    
+      <category term="ES6" scheme="//vuesch.github.io/tags/ES6/"/>
     
   </entry>
   
@@ -46,7 +37,7 @@ console.log(&quot;send ajax
     <link href="//vuesch.github.io/posts/Node.html"/>
     <id>//vuesch.github.io/posts/Node.html</id>
     <published>2020-03-05T16:37:02.000Z</published>
-    <updated>2020-03-07T16:17:21.152Z</updated>
+    <updated>2020-03-08T15:17:56.374Z</updated>
     
     <summary type="html">
     
