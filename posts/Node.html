@@ -399,7 +399,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.7k
+                        3.8k
                     </div>
                     
 
@@ -489,15 +489,16 @@ fs<span class="token punctuation">.</span><span class="token function">readFile<
 <ul>
 <li>无法利用多核CPU</li>
 <li>错误会引起整个应用退出，应用的健壮性值得考验（说白了就是断了一条腿就把命丢了🤔）</li>
-<li>大量计算占用CPU导致无法继续调用异步I/O（CPU：我TM在忙，等会儿……😒）<br>在浏览器中，JavaScript与UI是公用一个线程的，如果JavaScript长时间执行会导致UI的渲染和响应被中断。在Node中也是一样的，长时间的CPU占用会导致后续的异步I/O发不出调用，已完成的异步I/O的回调函数也会得不到及时执行。为了解决这个问题，Google研发了Gears，它会启用一个独立的进程去执行需要计算的程序，然后把结果通过事件的方式传回，这样很大程度上降低了阻塞的几率。后来，HTML5发明了Web Workers，逃不过的真香定律，Google放弃Gears来支持Web Workers。再后来，Node也使用了和Web Workers相同的思路来解决这个问题，这就是<code>child_process</code>（子进程）。<br>子进程的出现，使得Node可以从容的应对单线程在健壮性和无法利用多核CPU方面的问题。<br>Node在进程管理方面采用的就是<code>Master-Worker</code>的管理方式，<code>Master-Worker</code>模式的核心思想是在于Master进程和Worker进程各自分担各自的任务,协同完成信息处理的模式，如下图就很清楚地说明了该管理方式：<br><img src="../assets/masterWorker.png" alt="Master-Worker"> <h4 id="1-4-4-跨平台"><a href="#1-4-4-跨平台" class="headerlink" title="1.4.4 跨平台"></a>1.4.4 跨平台</h4>在Node发明之处，只能运行在Linux系统中（这不坑爹么😒），但是随着Node的发展，微软爸爸感觉这家伙越来越强大，就干脆找了一帮人实现了Node对Windows的兼容（666😂），微软发明的这玩意儿叫<code>libuv</code>，至于这玩意儿是啥，后期会讲到（呃，是学到😅），现在只要记住它是操作系统与Node上层模块系统之家构建的一层<code>平台层架构</code>就可以了，不过<code>libuv</code>也属实NB，现在已经成为了许多系统实现跨平台的基础组件了。（这就不能用666来形容了，应该是999，6翻了……😂）<h3 id="1-5-Node的应用场景"><a href="#1-5-Node的应用场景" class="headerlink" title="1.5 Node的应用场景"></a>1.5 Node的应用场景</h3><h4 id="1-5-1-I-O密集型（I-O-bound）"><a href="#1-5-1-I-O密集型（I-O-bound）" class="headerlink" title="1.5.1 I/O密集型（I/O bound）"></a>1.5.1 I/O密集型（I/O bound）</h4><code>I/O密集型</code>指的是系统的CPU性能相对硬盘、内存要好很多，此时，系统运作，大部分的状况是CPU在等I/O (硬盘/内存) 的读/写操作，此时CPU Loading并不高。<br>从单线程的角度来说，Node处理I/O的能力是一流的。Node面向网络且擅长并行I/O，能够有效地组织起更多的硬件资源，从而提供更好的服务。<br><code>I/O密集</code>的优势主要在于Node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务，资源占用较少。<h4 id="1-5-2-是否不擅长CPU密集型业务"><a href="#1-5-2-是否不擅长CPU密集型业务" class="headerlink" title="1.5.2 是否不擅长CPU密集型业务"></a>1.5.2 是否不擅长CPU密集型业务</h4>Node虽然在I/O密集型场景中大放异彩，但是在CPU密集型中也能胜任，这得益于V8的深度性能优化。<br>先说说什么是<code>CPU密集型（CPU-bound）</code>？</li>
+<li>大量计算占用CPU导致无法继续调用异步I/O（CPU：我TM在忙，等会儿……😒）<br>在浏览器中，JavaScript与UI是公用一个线程的，如果JavaScript长时间执行会导致UI的渲染和响应被中断。在Node中也是一样的，长时间的CPU占用会导致后续的异步I/O发不出调用，已完成的异步I/O的回调函数也会得不到及时执行。为了解决这个问题，Google研发了Gears，它会启用一个独立的进程去执行需要计算的程序，然后把结果通过事件的方式传回，这样很大程度上降低了阻塞的几率。后来，HTML5发明了Web Workers，逃不过的真香定律，Google放弃Gears来支持Web Workers。再后来，Node也使用了和Web Workers相同的思路来解决这个问题，这就是<code>child_process</code>（子进程）。<br>子进程的出现，使得Node可以从容的应对单线程在健壮性和无法利用多核CPU方面的问题。<br>Node在进程管理方面采用的就是<code>Master-Worker</code>的管理方式，<code>Master-Worker</code>模式的核心思想是在于Master进程和Worker进程各自分担各自的任务,协同完成信息处理的模式，如下图就很清楚地说明了该管理方式：<br><img src="../assets/masterWorker.png" alt="Master-Worker"> <h4 id="1-4-4-跨平台"><a href="#1-4-4-跨平台" class="headerlink" title="1.4.4 跨平台"></a>1.4.4 跨平台</h4>在Node发明之处，只能运行在Linux系统中（这不坑爹么😒），但是随着Node的发展，微软爸爸感觉这家伙越来越强大，就干脆找了一帮人实现了Node对Windows的兼容（666😂），微软发明的这玩意儿叫<code>libuv</code>，至于这玩意儿是啥，后期会讲到（呃，是学到😅），现在只要记住它是操作系统与Node上层模块系统之家构建的一层<code>平台层架构</code>就可以了，不过<code>libuv</code>也属实NB，现在已经成为了许多系统实现跨平台的基础组件了。（这就不能用666来形容了，应该是999，6翻了……😂）<h3 id="1-5-Node的应用场景"><a href="#1-5-Node的应用场景" class="headerlink" title="1.5 Node的应用场景"></a>1.5 Node的应用场景</h3><h4 id="1-5-1-I-O密集型（I-O-bound）"><a href="#1-5-1-I-O密集型（I-O-bound）" class="headerlink" title="1.5.1 I/O密集型（I/O bound）"></a>1.5.1 I/O密集型（I/O bound）</h4><code>I/O密集型</code>指的是<code>系统的CPU性能</code> <code>相对硬盘、内存</code>要好很多，此时，系统运作，大部分的状况是CPU在等I/O (硬盘/内存) 的读/写操作，此时CPU Loading并不高。<br>从单线程的角度来说，Node处理I/O的能力是一流的。Node面向网络且擅长并行I/O，能够有效地组织起更多的硬件资源，从而提供更好的服务。<br><code>I/O密集</code>的优势主要在于Node利用事件循环的处理能力，而不是启动每一个线程为每一个请求服务，资源占用较少。<h4 id="1-5-2-是否不擅长CPU密集型业务"><a href="#1-5-2-是否不擅长CPU密集型业务" class="headerlink" title="1.5.2 是否不擅长CPU密集型业务"></a>1.5.2 是否不擅长CPU密集型业务</h4>Node虽然在I/O密集型场景中大放异彩，但是在CPU密集型中也能胜任，这得益于V8的深度性能优化。<br>先说说什么是<code>CPU密集型（CPU-bound）</code>？</li>
 </ul>
 <ul>
-<li>CPU密集型也叫计算密集型，指的是系统的硬盘、内存性能相对CPU要好很多，此时，系统运作大部分的状况是CPU Loading 100%，CPU要读/写I/O(硬盘/内存)，I/O在很短的时间就可以完成，而CPU还有许多运算要处理，CPU Loading很高。</li>
+<li>CPU密集型也叫计算密集型，指的是<code>系统的硬盘、内存性能</code> <code>相对CPU</code>要好很多，此时，系统运作大部分的状况是CPU Loading 100%，CPU要读/写I/O(硬盘/内存)，I/O在很短的时间就可以完成，而CPU还有许多运算要处理，CPU Loading很高。</li>
 <li>在多重程序系统中，大部份时间用来做计算、逻辑判断等CPU动作的程序称之CPU bound。例如一个计算圆周率至小数点一千位以下的程序，在执行的过程当中绝大部份时间用在三角函数和开根号的计算，便是属于CPU bound的程序。</li>
 <li>CPU bound的程序一般而言CPU占用率相当高。这可能是因为任务本身不太需要访问I/O设备，也可能是因为程序是多线程实现因此屏蔽掉了等待I/O的时间。</li>
 </ul>
 <p>CPU密集型应用给Node带来的挑战主要是：由于JavaScript单线程的原因，如果有长时间运行的计算（比如大循环），将会导致CPU时间片不能释放，使得后续I/O无法发起。<br>Node应对上述挑战的方法是：适当调整和分解大型运算任务为多个小任务，使得运算能够适时释放，不阻塞调用的发起，这样既可同时享受到并行异步I/O的好处，又能充分利用CPU。所以说，CPU密集不可怕，如何合理调度是诀窍。</p>
-<h4 id="1-5-3-与遗留系统和平共处"><a href="#1-5-3-与遗留系统和平共处" class="headerlink" title="1.5.3 与遗留系统和平共处"></a>1.5.3 与遗留系统和平共处</h4><h4 id="1-5-4-分布式应用"><a href="#1-5-4-分布式应用" class="headerlink" title="1.5.4 分布式应用"></a>1.5.4 分布式应用</h4><h3 id="1-6-Node的使用者"><a href="#1-6-Node的使用者" class="headerlink" title="1.6 Node的使用者"></a>1.6 Node的使用者</h3><hr>
+<h4 id="1-5-3-与遗留系统和平共处"><a href="#1-5-3-与遗留系统和平共处" class="headerlink" title="1.5.3 与遗留系统和平共处"></a>1.5.3 与遗留系统和平共处</h4><p>Node还有一个好处就是，在一些老旧的项目中，比如JSP/ASP，前后端不分离，这样对一些没有Java开发经验的前端工程师来讲是一件比较头疼的事，但Node的出现，使得前端工程师在HTTP协议栈的两端能够高效灵活的开发，避免了Java繁琐的表达。</p>
+<h4 id="1-5-4-分布式应用"><a href="#1-5-4-分布式应用" class="headerlink" title="1.5.4 分布式应用"></a>1.5.4 分布式应用</h4><h3 id="1-6-Node的使用者"><a href="#1-6-Node的使用者" class="headerlink" title="1.6 Node的使用者"></a>1.6 Node的使用者</h3><hr>
 <h2 id="第2章-模块机制"><a href="#第2章-模块机制" class="headerlink" title="第2章 模块机制"></a>第2章 模块机制</h2><h2 id="第3章-异步I-O"><a href="#第3章-异步I-O" class="headerlink" title="第3章 异步I/O"></a>第3章 异步I/O</h2><h2 id="第4章-异步编程"><a href="#第4章-异步编程" class="headerlink" title="第4章 异步编程"></a>第4章 异步编程</h2><h2 id="第5章-内存控制"><a href="#第5章-内存控制" class="headerlink" title="第5章 内存控制"></a>第5章 内存控制</h2><h2 id="第6章-理解Buffer"><a href="#第6章-理解Buffer" class="headerlink" title="第6章 理解Buffer"></a>第6章 理解Buffer</h2><h2 id="第7章-网络编程"><a href="#第7章-网络编程" class="headerlink" title="第7章 网络编程"></a>第7章 网络编程</h2><h2 id="第8章-构建Web应用"><a href="#第8章-构建Web应用" class="headerlink" title="第8章 构建Web应用"></a>第8章 构建Web应用</h2><h2 id="第9章-玩转进程"><a href="#第9章-玩转进程" class="headerlink" title="第9章 玩转进程"></a>第9章 玩转进程</h2><h2 id="第10章-测试"><a href="#第10章-测试" class="headerlink" title="第10章 测试"></a>第10章 测试</h2><h2 id="第11章-产品化"><a href="#第11章-产品化" class="headerlink" title="第11章 产品化"></a>第11章 产品化</h2>
             </div>
             <hr/>
@@ -941,7 +942,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.4k</span>
+                <span class="white-color">8.5k</span>
             
 
             
