@@ -399,14 +399,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        6.2k
+                        6.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        22 分
+                        24 分
                     </div>
                     
                 
@@ -545,7 +545,20 @@ exports<span class="token punctuation">.</span>increment <span class="token oper
 <li>以<code>/</code>开始的绝对路径文件模块。</li>
 <li>非路径形式的文件模块，如自定义的connect模块。</li>
 </ul>
-<p><strong>①核心模块</strong><br>核心模块的优先级仅次于缓存加载，它在Node的源代码编译过程中已经编译为二进制代码，其加载过程最快。<br>如果试图加载一个与核心模块标识符相同的自定义模块，那是不会成功的。如果自己编写了一个http用户模块，想要加载成功，必须选择一个不同的标识符或者换用路径的方式。<br><strong>②路径形式的文件模块</strong><br>一<code>.</code>、<code>..</code>和<code>/</code>开始的标识符，这里都被当作文件模块来处理。在分析文件模块时，<code>require()</code>方法会将路径转为真是路径，并以真实路径作为索引，将编译执行后的结果放在缓存中，以使二次加载时更快。<br>由于文件模块给Node指明了确切的文件位置，所以在查找过程中可以节约大量时间，其加载速度慢于核心模块。<br><strong>③自定义模块</strong><br>自定义模块指的是非核心模块，也不是路径形式的标识符。它是一种特殊的文件模块，可能是一个文件或者包的形式。这类模块的查找是最费时的，也是所有方法中最慢的一种。<br><code>模块路径</code>是Node在定位文件模块的具体文件时制定的查找策略，具体表现为一个路径组成的数组。</p>
+<p><strong>①核心模块</strong><br>核心模块的优先级仅次于缓存加载，它在Node的源代码编译过程中已经编译为二进制代码，其加载过程最快。<br>如果试图加载一个与核心模块标识符相同的自定义模块，那是不会成功的。如果自己编写了一个http用户模块，想要加载成功，必须选择一个不同的标识符或者换用路径的方式。<br><strong>②路径形式的文件模块</strong><br>一<code>.</code>、<code>..</code>和<code>/</code>开始的标识符，这里都被当作文件模块来处理。在分析文件模块时，<code>require()</code>方法会将路径转为真是路径，并以真实路径作为索引，将编译执行后的结果放在缓存中，以使二次加载时更快。<br>由于文件模块给Node指明了确切的文件位置，所以在查找过程中可以节约大量时间，其加载速度慢于核心模块。<br><strong>③自定义模块</strong><br>自定义模块指的是非核心模块，也不是路径形式的标识符。它是一种特殊的文件模块，可能是一个文件或者包的形式。这类模块的查找是最费时的，也是所有方法中最慢的一种。<br><code>模块路径</code>是Node在定位文件模块的具体文件时制定的查找策略，具体表现为一个路径组成的数组。如下所示：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span> <span class="token string">'/Users/shenchenhao/Desktop/test/node_modules'</span><span class="token punctuation">,</span>
+  <span class="token string">'/Users/shenchenhao/Desktop/node_modules'</span><span class="token punctuation">,</span>
+  <span class="token string">'/Users/shenchenhao/node_modules'</span><span class="token punctuation">,</span>
+  <span class="token string">'/Users/node_modules'</span><span class="token punctuation">,</span>
+  <span class="token string">'/node_modules'</span> <span class="token punctuation">]</span></code></pre>
+<p>模块路径的生成规则如下所示：</p>
+<ul>
+<li>当前文件下的node_modules目录。</li>
+<li>父目录下的node_modules目录。</li>
+<li>父目录的父目录下的node_modules目录。</li>
+<li>沿路径向上逐级递归，直到根目录下的node_modules目录。<br>当文件的路径越深，模块查找耗时会越多，这是自定义模块的加载速度是最慢的原因。<h5 id="2、文件定位"><a href="#2、文件定位" class="headerlink" title="2、文件定位"></a>2、文件定位</h5>从缓存加载的优化策略使得二次引入时不需要路径分析、文件定位和编译执行的过程，大大提高了再次加载模块时的效率。但在文件的定位过程中，还有一些细节需要注意，这主要包括文件扩展名的分析、目录和包的处理。</li>
+</ul>
+<p><strong>①文件扩展名分析</strong><br><code>require()</code>在分析标识符的过程中，会出现标识符中不包含文件扩展名的情况。CommonJS模块规范也允许在标识符中不包含文件扩展名，这种情况下，Node会按<code>.js</code>、<code>.json</code>、<code>.node</code>的次序补足扩展名，依次尝试。<br>在尝试过程中，需要调用fs模块同步阻塞式地判断文件是否存在。因为node是单线程的，所以这里是一个会引起性能问题的地方。小诀窍：如果是<code>.node</code>和<code>.json</code>文件，在传递给<code>require()</code>的标识符中带上扩展名，会加快一点速度。另一个诀窍是：同步配合缓存，可以大幅度缓解Node单线程中阻塞式调用的缺陷。<br><strong>②目录分析和包</strong><br>在分析标识符的过程中，<code>require()</code>通过分析文件扩展名之后，可能没有查到对应文件夹，但却得到一个目录，这在引入自定义模块和逐个模块路径进行查找时经常会出现，此时Node会将此目录当做一个包来处理。<br>在这个过程中，Node对CommonJS包规范进行了一定程度的支持。首先，Node在当前目录下查找package.json（CommonJS包规范定义的包描述文件），通过<code>JSON.parse()</code>解析出包描述对象，从中取出main属性指定的文件名进行定位。如果文件名缺少扩展名，将会进入扩展名分析的步骤。<br>而如果main属性指定的文件名错误，或者压根没有package.json文件，Node会将index当作默认文件名，然后依次查找index.js、index.json、index.node。<br>如果再目录分析的过程中没有定位成功任何文件，则自定义模块进入下一个模块路径进行查找。如果模块路径数组都被遍历完，依然没有查找到目标文件，则会抛出查找失败的异常。</p>
 <h4 id="2-2-3-模块编译"><a href="#2-2-3-模块编译" class="headerlink" title="2.2.3 模块编译"></a>2.2.3 模块编译</h4><h3 id="2-3-核心模块"><a href="#2-3-核心模块" class="headerlink" title="2.3 核心模块"></a>2.3 核心模块</h3><h4 id="2-3-1-JavaScript的核心模块编译过程"><a href="#2-3-1-JavaScript的核心模块编译过程" class="headerlink" title="2.3.1 JavaScript的核心模块编译过程"></a>2.3.1 JavaScript的核心模块编译过程</h4><h4 id="2-3-2-C-C-核心模块的编译过程"><a href="#2-3-2-C-C-核心模块的编译过程" class="headerlink" title="2.3.2 C/C++核心模块的编译过程"></a>2.3.2 C/C++核心模块的编译过程</h4><h4 id="2-3-3-核心模块的引入流程"><a href="#2-3-3-核心模块的引入流程" class="headerlink" title="2.3.3 核心模块的引入流程"></a>2.3.3 核心模块的引入流程</h4><h4 id="2-3-4-编写核心模块"><a href="#2-3-4-编写核心模块" class="headerlink" title="2.3.4 编写核心模块"></a>2.3.4 编写核心模块</h4><h3 id="2-4-C-C-扩展模块"><a href="#2-4-C-C-扩展模块" class="headerlink" title="2.4 C/C++扩展模块"></a>2.4 C/C++扩展模块</h3><h4 id="2-4-1-前提条件"><a href="#2-4-1-前提条件" class="headerlink" title="2.4.1 前提条件"></a>2.4.1 前提条件</h4><h4 id="2-4-2-C-C-扩展模块的编写"><a href="#2-4-2-C-C-扩展模块的编写" class="headerlink" title="2.4.2 C/C++扩展模块的编写"></a>2.4.2 C/C++扩展模块的编写</h4><h4 id="2-4-3-C-C-扩展模块的编译"><a href="#2-4-3-C-C-扩展模块的编译" class="headerlink" title="2.4.3 C/C++扩展模块的编译"></a>2.4.3 C/C++扩展模块的编译</h4><h4 id="2-4-4-C-C-扩展模块的加载"><a href="#2-4-4-C-C-扩展模块的加载" class="headerlink" title="2.4.4 C/C++扩展模块的加载"></a>2.4.4 C/C++扩展模块的加载</h4><h3 id="2-5-模块调用栈"><a href="#2-5-模块调用栈" class="headerlink" title="2.5 模块调用栈"></a>2.5 模块调用栈</h3><h3 id="2-6-包与NPM"><a href="#2-6-包与NPM" class="headerlink" title="2.6 包与NPM"></a>2.6 包与NPM</h3><h4 id="2-6-1-包结构"><a href="#2-6-1-包结构" class="headerlink" title="2.6.1 包结构"></a>2.6.1 包结构</h4><h4 id="2-6-2-包描述文件与NPM"><a href="#2-6-2-包描述文件与NPM" class="headerlink" title="2.6.2 包描述文件与NPM"></a>2.6.2 包描述文件与NPM</h4><h4 id="2-6-3-NPM常用功能"><a href="#2-6-3-NPM常用功能" class="headerlink" title="2.6.3 NPM常用功能"></a>2.6.3 NPM常用功能</h4><h4 id="2-6-4-局域NPM"><a href="#2-6-4-局域NPM" class="headerlink" title="2.6.4 局域NPM"></a>2.6.4 局域NPM</h4><h4 id="2-6-5-NPM潜在问题"><a href="#2-6-5-NPM潜在问题" class="headerlink" title="2.6.5 NPM潜在问题"></a>2.6.5 NPM潜在问题</h4><h3 id="2-7-前后端公用模块"><a href="#2-7-前后端公用模块" class="headerlink" title="2.7 前后端公用模块"></a>2.7 前后端公用模块</h3><h4 id="2-7-1-模块的侧重点"><a href="#2-7-1-模块的侧重点" class="headerlink" title="2.7.1 模块的侧重点"></a>2.7.1 模块的侧重点</h4><h4 id="2-7-2-AMD规范"><a href="#2-7-2-AMD规范" class="headerlink" title="2.7.2 AMD规范"></a>2.7.2 AMD规范</h4><h4 id="2-7-3-CMD规范"><a href="#2-7-3-CMD规范" class="headerlink" title="2.7.3 CMD规范"></a>2.7.3 CMD规范</h4><h4 id="2-7-4兼容多种规范模式"><a href="#2-7-4兼容多种规范模式" class="headerlink" title="2.7.4兼容多种规范模式"></a>2.7.4兼容多种规范模式</h4><h2 id="第3章-异步I-O"><a href="#第3章-异步I-O" class="headerlink" title="第3章 异步I/O"></a>第3章 异步I/O</h2><h2 id="第4章-异步编程"><a href="#第4章-异步编程" class="headerlink" title="第4章 异步编程"></a>第4章 异步编程</h2><h2 id="第5章-内存控制"><a href="#第5章-内存控制" class="headerlink" title="第5章 内存控制"></a>第5章 内存控制</h2><h2 id="第6章-理解Buffer"><a href="#第6章-理解Buffer" class="headerlink" title="第6章 理解Buffer"></a>第6章 理解Buffer</h2><h2 id="第7章-网络编程"><a href="#第7章-网络编程" class="headerlink" title="第7章 网络编程"></a>第7章 网络编程</h2><h2 id="第8章-构建Web应用"><a href="#第8章-构建Web应用" class="headerlink" title="第8章 构建Web应用"></a>第8章 构建Web应用</h2><h2 id="第9章-玩转进程"><a href="#第9章-玩转进程" class="headerlink" title="第9章 玩转进程"></a>第9章 玩转进程</h2><h2 id="第10章-测试"><a href="#第10章-测试" class="headerlink" title="第10章 测试"></a>第10章 测试</h2><h2 id="第11章-产品化"><a href="#第11章-产品化" class="headerlink" title="第11章 产品化"></a>第11章 产品化</h2>
             </div>
             <hr/>
@@ -989,7 +1002,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">10.9k</span>
+                <span class="white-color">11.6k</span>
             
 
             
