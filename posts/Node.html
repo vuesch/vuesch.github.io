@@ -399,14 +399,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        8.3k
+                        8.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        29 分
+                        30 分
                     </div>
                     
                 
@@ -600,7 +600,15 @@ exports<span class="token punctuation">.</span>increment <span class="token oper
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>在这个过程中，JavaScript代码以字符串的形式存储在node命名空间中，是不可直接执行的。在启动Node进程时，JavaScript代码直接加载进内存中。在加载的过程中，JavaScript核心模块经历标识符分析后直接定位到内存中，比普通的文件模块从磁盘中一处一处查找要快很多。<br><strong>②编译JavaScript核心模块</strong></p>
+<p>在这个过程中，JavaScript代码以字符串的形式存储在node命名空间中，是不可直接执行的。在启动Node进程时，JavaScript代码直接加载进内存中。在加载的过程中，JavaScript核心模块经历标识符分析后直接定位到内存中，比普通的文件模块从磁盘中一处一处查找要快很多。<br><strong>②编译JavaScript核心模块</strong><br><code>lib</code>目录下的所有模块文件也没有定义require、module、exports这些变量。在引入JavaScript核心模块的过程中，也经历了头尾包装的过程，然后才执行和导出了exports对象。与文件模块有区别的地方在于：获取源代码的方式（核心模块是从内存中加载的）以及缓存执行结果的位置。<br>JavaScript核心模块的定义如下面的代码所示，源文件通过<code>process.binding(&#39;natives&#39;)</code>取出，编译成功的模块缓存到<code>NativeModule._cache</code>对象上，文件模块则缓存到<code>Module._cache</code>对象上：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> NativeModule <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>filename <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token string">'.js'</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>loaded <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+NativeModule<span class="token punctuation">.</span>_source <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">binding</span><span class="token punctuation">(</span><span class="token string">'natives'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+NativeModule<span class="token punctuation">.</span>_cache <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h4 id="2-3-2-C-C-核心模块的编译过程"><a href="#2-3-2-C-C-核心模块的编译过程" class="headerlink" title="2.3.2 C/C++核心模块的编译过程"></a>2.3.2 C/C++核心模块的编译过程</h4><h4 id="2-3-3-核心模块的引入流程"><a href="#2-3-3-核心模块的引入流程" class="headerlink" title="2.3.3 核心模块的引入流程"></a>2.3.3 核心模块的引入流程</h4><h4 id="2-3-4-编写核心模块"><a href="#2-3-4-编写核心模块" class="headerlink" title="2.3.4 编写核心模块"></a>2.3.4 编写核心模块</h4><h3 id="2-4-C-C-扩展模块"><a href="#2-4-C-C-扩展模块" class="headerlink" title="2.4 C/C++扩展模块"></a>2.4 C/C++扩展模块</h3><h4 id="2-4-1-前提条件"><a href="#2-4-1-前提条件" class="headerlink" title="2.4.1 前提条件"></a>2.4.1 前提条件</h4><h4 id="2-4-2-C-C-扩展模块的编写"><a href="#2-4-2-C-C-扩展模块的编写" class="headerlink" title="2.4.2 C/C++扩展模块的编写"></a>2.4.2 C/C++扩展模块的编写</h4><h4 id="2-4-3-C-C-扩展模块的编译"><a href="#2-4-3-C-C-扩展模块的编译" class="headerlink" title="2.4.3 C/C++扩展模块的编译"></a>2.4.3 C/C++扩展模块的编译</h4><h4 id="2-4-4-C-C-扩展模块的加载"><a href="#2-4-4-C-C-扩展模块的加载" class="headerlink" title="2.4.4 C/C++扩展模块的加载"></a>2.4.4 C/C++扩展模块的加载</h4><h3 id="2-5-模块调用栈"><a href="#2-5-模块调用栈" class="headerlink" title="2.5 模块调用栈"></a>2.5 模块调用栈</h3><h3 id="2-6-包与NPM"><a href="#2-6-包与NPM" class="headerlink" title="2.6 包与NPM"></a>2.6 包与NPM</h3><h4 id="2-6-1-包结构"><a href="#2-6-1-包结构" class="headerlink" title="2.6.1 包结构"></a>2.6.1 包结构</h4><h4 id="2-6-2-包描述文件与NPM"><a href="#2-6-2-包描述文件与NPM" class="headerlink" title="2.6.2 包描述文件与NPM"></a>2.6.2 包描述文件与NPM</h4><h4 id="2-6-3-NPM常用功能"><a href="#2-6-3-NPM常用功能" class="headerlink" title="2.6.3 NPM常用功能"></a>2.6.3 NPM常用功能</h4><h4 id="2-6-4-局域NPM"><a href="#2-6-4-局域NPM" class="headerlink" title="2.6.4 局域NPM"></a>2.6.4 局域NPM</h4><h4 id="2-6-5-NPM潜在问题"><a href="#2-6-5-NPM潜在问题" class="headerlink" title="2.6.5 NPM潜在问题"></a>2.6.5 NPM潜在问题</h4><h3 id="2-7-前后端公用模块"><a href="#2-7-前后端公用模块" class="headerlink" title="2.7 前后端公用模块"></a>2.7 前后端公用模块</h3><h4 id="2-7-1-模块的侧重点"><a href="#2-7-1-模块的侧重点" class="headerlink" title="2.7.1 模块的侧重点"></a>2.7.1 模块的侧重点</h4><h4 id="2-7-2-AMD规范"><a href="#2-7-2-AMD规范" class="headerlink" title="2.7.2 AMD规范"></a>2.7.2 AMD规范</h4><h4 id="2-7-3-CMD规范"><a href="#2-7-3-CMD规范" class="headerlink" title="2.7.3 CMD规范"></a>2.7.3 CMD规范</h4><h4 id="2-7-4兼容多种规范模式"><a href="#2-7-4兼容多种规范模式" class="headerlink" title="2.7.4兼容多种规范模式"></a>2.7.4兼容多种规范模式</h4><h2 id="第3章-异步I-O"><a href="#第3章-异步I-O" class="headerlink" title="第3章 异步I/O"></a>第3章 异步I/O</h2><h2 id="第4章-异步编程"><a href="#第4章-异步编程" class="headerlink" title="第4章 异步编程"></a>第4章 异步编程</h2><h2 id="第5章-内存控制"><a href="#第5章-内存控制" class="headerlink" title="第5章 内存控制"></a>第5章 内存控制</h2><h2 id="第6章-理解Buffer"><a href="#第6章-理解Buffer" class="headerlink" title="第6章 理解Buffer"></a>第6章 理解Buffer</h2><h2 id="第7章-网络编程"><a href="#第7章-网络编程" class="headerlink" title="第7章 网络编程"></a>第7章 网络编程</h2><h2 id="第8章-构建Web应用"><a href="#第8章-构建Web应用" class="headerlink" title="第8章 构建Web应用"></a>第8章 构建Web应用</h2><h2 id="第9章-玩转进程"><a href="#第9章-玩转进程" class="headerlink" title="第9章 玩转进程"></a>第9章 玩转进程</h2><h2 id="第10章-测试"><a href="#第10章-测试" class="headerlink" title="第10章 测试"></a>第10章 测试</h2><h2 id="第11章-产品化"><a href="#第11章-产品化" class="headerlink" title="第11章 产品化"></a>第11章 产品化</h2>
             </div>
             <hr/>
@@ -1044,7 +1052,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13k</span>
+                <span class="white-color">13.1k</span>
             
 
             
