@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JavaScript设计模式与开发实践</title>
+      <link href="/posts/designMode.html"/>
+      <url>/posts/designMode.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES6标准入门</title>
       <link href="/posts/es6.html"/>
       <url>/posts/es6.html</url>
