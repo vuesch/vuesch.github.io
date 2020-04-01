@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//vuesch.github.io/"/>
-  <updated>2020-03-31T15:56:58.927Z</updated>
+  <updated>2020-03-31T15:57:42.824Z</updated>
   <id>//vuesch.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="//vuesch.github.io/posts/designMode.html"/>
     <id>//vuesch.github.io/posts/designMode.html</id>
     <published>2020-03-25T16:43:41.000Z</published>
-    <updated>2020-03-31T15:56:58.927Z</updated>
+    <updated>2020-03-31T15:57:42.824Z</updated>
     
     <summary type="html">
     
@@ -36,9 +36,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
       <category term="设计模式" scheme="//vuesch.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -63,7 +63,7 @@
     <link href="//vuesch.github.io/posts/Node.html"/>
     <id>//vuesch.github.io/posts/Node.html</id>
     <published>2020-03-05T16:37:02.000Z</published>
-    <updated>2020-03-25T16:38:46.430Z</updated>
+    <updated>2020-04-01T14:15:22.998Z</updated>
     
     <summary type="html">
     
@@ -102,9 +102,9 @@
     </summary>
     
     
-      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
-    
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
+    
+      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
     
   </entry>
   
