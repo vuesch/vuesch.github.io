@@ -63,7 +63,7 @@
     <link href="//vuesch.github.io/posts/Node.html"/>
     <id>//vuesch.github.io/posts/Node.html</id>
     <published>2020-03-05T16:37:02.000Z</published>
-    <updated>2020-04-10T14:36:11.029Z</updated>
+    <updated>2020-04-11T15:10:54.030Z</updated>
     
     <summary type="html">
     
@@ -102,9 +102,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
       <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
