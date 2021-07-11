@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Typescript教程, 没有老婆的饼">
-    <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近团队中开始使用React+TypeScript来重构前端项目了，和同事聊了一下，感觉自己的TS知识还是有很多欠缺，今天就开始系统">
+    <meta name="keywords" content="使用Hexo遇到的问题, 没有老婆的饼">
+    <meta name="description" content="一、解决Hexo clean导致CNAME文件被删问题问题描述在使用hexo clean命令之后，public文件夹便会被删除，而我们一开始将自己的GitHub地址绑定到个人域名上的时候，是通过/public/CNAME文件来实现映射的，所">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Typescript教程 | 没有老婆的饼 | 前端小学生</title>
+    <title>使用Hexo遇到的问题 | 没有老婆的饼 | 前端小学生</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Typescript教程
+                        使用Hexo遇到的问题
                     </div>
                 </div>
             </div>
@@ -377,8 +377,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/TypeScript/" target="_blank">
-                                <span class="chip bg-color">TypeScript</span>
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -392,14 +392,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-25
+                    2021-07-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        63
+                        321
                     </div>
                     
 
@@ -422,7 +422,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近团队中开始使用React+TypeScript来重构前端项目了，和同事聊了一下，感觉自己的TS知识还是有很多欠缺，今天就开始系统的梳理一下吧！</p>
+                <h2 id="一、解决Hexo-clean导致CNAME文件被删问题"><a href="#一、解决Hexo-clean导致CNAME文件被删问题" class="headerlink" title="一、解决Hexo clean导致CNAME文件被删问题"></a>一、解决Hexo clean导致CNAME文件被删问题</h2><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用<code>hexo clean</code>命令之后，<strong>public</strong>文件夹便会被删除，而我们一开始将自己的GitHub地址绑定到个人域名上的时候，是通过<strong>/public/CNAME</strong>文件来实现映射的，所以<strong>/public</strong>文件夹被删除，<strong>CNAME</strong>文件也将被删除，重新执行<code>hexo g</code>命令也不会重新生成<strong>CNAME</strong>文件，所以通过域名就无法访问博客。</p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>这是因为整个<strong>/public</strong>文件夹是执行<code>hexo g</code>后生成的，若执行<code>hexo clean1</code>会把整个public连同CNAME文件夹删掉，在重新执行<code>hexo g</code>后生成的<strong>/public</strong>文件夹里肯定没有我们手动添加的<strong>CNAME</strong>文件。</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>解决方法是把<strong>CNAME</strong>文件放在<strong>/source</strong>文件夹下，而不是<strong>/public</strong>文件夹，在执行<code>hexo g</code>命令时，会把<strong>/source</strong>文件夹下的<strong>CNAME</strong>文件原原本本地复制到<strong>/public</strong>文件夹下，即使执行<code>hexo clean</code>后，下次重新编译还是会复制过去，这样就解决了问题。</p>
+<p>其实还有很多其他的文件如果想编译后放在<strong>/public</strong>文件夹下，都可以先放<strong>/source</strong>文件夹下，在<code>hexo g</code>编译后就会复制到<strong>/public</strong>文件夹下。</p>
 
             </div>
             <hr/>
@@ -581,9 +584,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Typescript教程》
+                    《使用Hexo遇到的问题》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/posts/TypeScript.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/posts/problem.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 vuesch
             </a> 采用
@@ -624,7 +627,7 @@
         repo: 'vuesch.github.io',
         owner: 'vuesch',
         admin: "没有老婆的饼",
-        id: '2019-09-25T16-17-43',
+        id: '2021-07-11T23-25-05',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -643,7 +646,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Wed Sep 25 2019 16:17:43 GMT+0800',
+    id: 'Sun Jul 11 2021 23:25:05 GMT+0800',
     owner: 'vuesch',
     repo: 'vuesch.github.io',
     oauth: {
@@ -667,29 +670,30 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/ES5.html">
+                <a href="/posts/problem.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ECMAScript5.1">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="使用Hexo遇到的问题">
                         
-                        <span class="card-title">ECMAScript5.1</span>
+                        <span class="card-title">使用Hexo遇到的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ES5的学习之路
+                            问题记录
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -698,15 +702,12 @@ gitment.render('gitment-content');
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ES5/" target="_blank">
-                        <span class="chip bg-color">ES5</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -720,24 +721,24 @@ gitment.render('gitment-content');
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/undefined.html">
+                <a href="/posts/javscript.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Webpack从入门到精通">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="你不知道的JavaScript(上卷)">
                         
-                        <span class="card-title">Webpack从入门到精通</span>
+                        <span class="card-title">你不知道的JavaScript(上卷)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            webpack笔记
+                            JavaScript解读
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-25
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-01
                             </span>
                         <span class="publish-author">
                             
@@ -750,8 +751,8 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/" target="_blank">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
