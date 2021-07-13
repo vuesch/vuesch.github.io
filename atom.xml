@@ -150,9 +150,9 @@
     </summary>
     
     
-      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
-    
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
+    
+      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
     
   </entry>
   
@@ -176,7 +176,7 @@
     
     </summary>
     
-      <category term="TypeScript" scheme="//vuesch.github.io/categories/TypeScript/"/>
+      <category term="TypeScript" scheme="//vuesch.github.io/categories/ts/"/>
     
     
       <category term="TypeScript" scheme="//vuesch.github.io/tags/TypeScript/"/>
