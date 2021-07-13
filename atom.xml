@@ -150,9 +150,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
       <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -274,30 +274,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript高级程序设计2</title>
-    <link href="//vuesch.github.io/posts/JavaScript2.html"/>
-    <id>//vuesch.github.io/posts/JavaScript2.html</id>
-    <published>2019-09-25T02:54:10.000Z</published>
-    <updated>2019-10-25T08:28:53.242Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript高级程序设计1</title>
     <link href="//vuesch.github.io/posts/JavaScript1.html"/>
     <id>//vuesch.github.io/posts/JavaScript1.html</id>
@@ -311,6 +287,30 @@
         
         
           &lt;h2 id=&quot;第一章-JavaScript简介&quot;&gt;&lt;a href=&quot;#第一章-JavaScript简介&quot; class=&quot;headerlink&quot; title=&quot;第一章 JavaScript简介&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#第一章-JavaScript简介&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计2</title>
+    <link href="//vuesch.github.io/posts/JavaScript2.html"/>
+    <id>//vuesch.github.io/posts/JavaScript2.html</id>
+    <published>2019-09-25T02:54:10.000Z</published>
+    <updated>2019-10-25T08:28:53.242Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;
         
       
     
