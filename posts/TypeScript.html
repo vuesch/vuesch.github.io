@@ -408,7 +408,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        542
+                        596
                     </div>
                     
 
@@ -487,17 +487,23 @@
       name <span class="token operator">=</span> <span class="token string">"smith"</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
-<h3 id="2-2-基本数据结构——Array、enum"><a href="#2-2-基本数据结构——Array、enum" class="headerlink" title="2.2 基本数据结构——Array、enum"></a>2.2 基本数据结构——Array、enum</h3><ul>
-<li>Array<br>  TypeScript像JavaScript一样可以操作数组元素。 有两种方式可以定义数组。 <ul>
-<li>第一种，可以在元素类型后面接上<code>[]</code>，表示由此类型元素组成的一个数组：<pre class=" language-typescript"><code class="language-typescript">  <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<h3 id="2-2-基本数据结构——Array、Tuple、enum"><a href="#2-2-基本数据结构——Array、Tuple、enum" class="headerlink" title="2.2 基本数据结构——Array、Tuple、enum"></a>2.2 基本数据结构——Array、Tuple、enum</h3><ul>
+<li><p>Array<br>  TypeScript像JavaScript一样可以操作数组元素。 有两种方式可以定义数组。 </p>
+<ul>
+<li><p>第一种，可以在元素类型后面接上<code>[]</code>，表示由此类型元素组成的一个数组：</p>
+<pre class=" language-typescript"><code class="language-typescript">  <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li>第二种方式是使用数组泛型，<code>Array&lt;元素类型&gt;</code>：<pre class=" language-typescript"><code class="language-typescript">  <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<li><p>第二种方式是使用数组泛型，<code>Array&lt;元素类型&gt;</code>：</p>
+<pre class=" language-typescript"><code class="language-typescript">  <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token keyword">number</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
   <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token keyword">string</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"张三"</span><span class="token punctuation">,</span> <span class="token string">"李四"</span><span class="token punctuation">,</span> <span class="token string">"王五"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
+<li><p>Tuple<br>  元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。 比如，你可以定义一对值分别为 <code>string</code>和<code>number</code>类型的元组。</p>
+<h3 id="2-3-基本数据类型——Any、Void"><a href="#2-3-基本数据类型——Any、Void" class="headerlink" title="2.3 基本数据类型——Any、Void"></a>2.3 基本数据类型——Any、Void</h3><h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2></li>
 </ul>
-<h3 id="2-3-基本数据类型——Any、Void"><a href="#2-3-基本数据类型——Any、Void" class="headerlink" title="2.3 基本数据类型——Any、Void"></a>2.3 基本数据类型——Any、Void</h3><h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
+
             </div>
             <hr/>
 
@@ -779,12 +785,12 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
                     <a href="/tags/ES5/" target="_blank">
                         <span class="chip bg-color">ES5</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
