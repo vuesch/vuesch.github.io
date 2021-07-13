@@ -90,9 +90,9 @@
       <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
     
     
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
       <category term="设计模式" scheme="//vuesch.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -162,9 +162,9 @@
       <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
     
     
-      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
-    
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
+    
+      <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
     
   </entry>
   
@@ -173,7 +173,7 @@
     <link href="//vuesch.github.io/posts/TypeScript.html"/>
     <id>//vuesch.github.io/posts/TypeScript.html</id>
     <published>2019-09-25T08:17:43.000Z</published>
-    <updated>2021-07-13T13:20:54.894Z</updated>
+    <updated>2021-07-13T14:36:04.872Z</updated>
     
     <summary type="html">
     
