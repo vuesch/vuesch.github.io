@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="//vuesch.github.io/"/>
-  <updated>2021-07-11T16:20:02.002Z</updated>
+  <updated>2021-07-13T09:01:19.319Z</updated>
   <id>//vuesch.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="//vuesch.github.io/posts/problem.html"/>
     <id>//vuesch.github.io/posts/problem.html</id>
     <published>2021-07-11T15:25:05.000Z</published>
-    <updated>2021-07-11T16:20:02.002Z</updated>
+    <updated>2021-07-13T09:01:19.319Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+      <category term="hexo" scheme="//vuesch.github.io/categories/hexo/"/>
+    
     
       <category term="Hexo" scheme="//vuesch.github.io/tags/Hexo/"/>
     
@@ -45,7 +47,7 @@
     <link href="//vuesch.github.io/posts/javscript.html"/>
     <id>//vuesch.github.io/posts/javscript.html</id>
     <published>2020-10-01T05:30:23.000Z</published>
-    <updated>2020-10-04T15:50:36.219Z</updated>
+    <updated>2021-07-13T09:00:23.988Z</updated>
     
     <summary type="html">
     
@@ -59,6 +61,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
+    
     
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
@@ -69,7 +73,7 @@
     <link href="//vuesch.github.io/posts/designMode.html"/>
     <id>//vuesch.github.io/posts/designMode.html</id>
     <published>2020-03-25T16:43:41.000Z</published>
-    <updated>2020-03-31T15:57:42.824Z</updated>
+    <updated>2021-07-13T09:02:15.404Z</updated>
     
     <summary type="html">
     
@@ -83,6 +87,8 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
+    
     
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
@@ -95,11 +101,13 @@
     <link href="//vuesch.github.io/posts/es6.html"/>
     <id>//vuesch.github.io/posts/es6.html</id>
     <published>2020-03-08T08:03:09.000Z</published>
-    <updated>2020-03-08T08:05:23.337Z</updated>
+    <updated>2021-07-13T09:01:50.674Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
     
     
       <category term="ES6" scheme="//vuesch.github.io/tags/ES6/"/>
@@ -111,7 +119,7 @@
     <link href="//vuesch.github.io/posts/Node.html"/>
     <id>//vuesch.github.io/posts/Node.html</id>
     <published>2020-03-05T16:37:02.000Z</published>
-    <updated>2021-06-27T08:58:41.930Z</updated>
+    <updated>2021-07-13T09:00:55.213Z</updated>
     
     <summary type="html">
     
@@ -125,6 +133,8 @@
     
     </summary>
     
+      <category term="Node" scheme="//vuesch.github.io/categories/node/"/>
+    
     
       <category term="Node" scheme="//vuesch.github.io/tags/Node/"/>
     
@@ -135,7 +145,7 @@
     <link href="//vuesch.github.io/posts/ES5.html"/>
     <id>//vuesch.github.io/posts/ES5.html</id>
     <published>2019-10-28T07:44:08.000Z</published>
-    <updated>2020-03-25T16:52:52.000Z</updated>
+    <updated>2021-07-13T09:01:43.305Z</updated>
     
     <summary type="html">
     
@@ -148,6 +158,8 @@
       
     
     </summary>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
     
     
       <category term="ES5" scheme="//vuesch.github.io/tags/ES5/"/>
@@ -188,11 +200,13 @@
     <link href="//vuesch.github.io/posts/undefined.html"/>
     <id>//vuesch.github.io/posts/undefined.html</id>
     <published>2019-09-25T03:46:09.000Z</published>
-    <updated>2019-11-12T06:13:01.709Z</updated>
+    <updated>2021-07-13T09:04:11.576Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="webpack" scheme="//vuesch.github.io/categories/webpack/"/>
     
     
       <category term="webpack" scheme="//vuesch.github.io/tags/webpack/"/>
@@ -204,11 +218,13 @@
     <link href="//vuesch.github.io/posts/undefined.html"/>
     <id>//vuesch.github.io/posts/undefined.html</id>
     <published>2019-09-25T03:45:16.000Z</published>
-    <updated>2019-11-12T06:13:39.605Z</updated>
+    <updated>2021-07-13T09:03:59.192Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="Vue" scheme="//vuesch.github.io/categories/vue/"/>
     
     
       <category term="Vue" scheme="//vuesch.github.io/tags/Vue/"/>
@@ -220,11 +236,13 @@
     <link href="//vuesch.github.io/posts/vue.html"/>
     <id>//vuesch.github.io/posts/vue.html</id>
     <published>2019-09-25T03:44:59.000Z</published>
-    <updated>2019-10-23T04:00:56.939Z</updated>
+    <updated>2021-07-13T09:03:36.182Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="Vue" scheme="//vuesch.github.io/categories/vue/"/>
     
     
       <category term="Vue" scheme="//vuesch.github.io/tags/Vue/"/>
@@ -236,7 +254,7 @@
     <link href="//vuesch.github.io/posts/use-svn-in-Mac.html"/>
     <id>//vuesch.github.io/posts/use-svn-in-Mac.html</id>
     <published>2019-09-25T03:21:31.000Z</published>
-    <updated>2019-10-28T07:51:51.357Z</updated>
+    <updated>2021-07-13T09:02:25.117Z</updated>
     
     <summary type="html">
     
@@ -250,6 +268,8 @@
     
     </summary>
     
+      <category term="SVN" scheme="//vuesch.github.io/categories/svn/"/>
+    
     
       <category term="Mac" scheme="//vuesch.github.io/tags/Mac/"/>
     
@@ -262,14 +282,42 @@
     <link href="//vuesch.github.io/posts/react.html"/>
     <id>//vuesch.github.io/posts/react.html</id>
     <published>2019-09-25T03:14:22.000Z</published>
-    <updated>2019-09-27T07:57:45.541Z</updated>
+    <updated>2021-07-13T09:03:08.533Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="React" scheme="//vuesch.github.io/categories/react/"/>
+    
     
       <category term="React" scheme="//vuesch.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript高级程序设计2</title>
+    <link href="//vuesch.github.io/posts/JavaScript2.html"/>
+    <id>//vuesch.github.io/posts/JavaScript2.html</id>
+    <published>2019-09-25T02:54:10.000Z</published>
+    <updated>2021-07-13T09:02:10.054Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
+    
+    
+      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -278,7 +326,7 @@
     <link href="//vuesch.github.io/posts/JavaScript1.html"/>
     <id>//vuesch.github.io/posts/JavaScript1.html</id>
     <published>2019-09-25T02:54:10.000Z</published>
-    <updated>2019-10-23T04:15:04.664Z</updated>
+    <updated>2021-07-13T09:02:03.987Z</updated>
     
     <summary type="html">
     
@@ -292,29 +340,7 @@
     
     </summary>
     
-    
-      <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript高级程序设计2</title>
-    <link href="//vuesch.github.io/posts/JavaScript2.html"/>
-    <id>//vuesch.github.io/posts/JavaScript2.html</id>
-    <published>2019-09-25T02:54:10.000Z</published>
-    <updated>2019-10-25T08:28:53.242Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;
-        
-      
-    
-    </summary>
+      <category term="JavaScript" scheme="//vuesch.github.io/categories/js/"/>
     
     
       <category term="JavaScript" scheme="//vuesch.github.io/tags/JavaScript/"/>
