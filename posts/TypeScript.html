@@ -408,14 +408,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        858
+                        974
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -523,6 +523,13 @@
 <p>  默认情况下，从0开始为元素编号。 你也可以手动的指定成员的数值。 例如，我们将上面的例子改成从 1开始编号：</p>
 <pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">enum</span> Color <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green<span class="token punctuation">,</span> Blue<span class="token punctuation">}</span>
       <span class="token keyword">let</span> c<span class="token punctuation">:</span> Color <span class="token operator">=</span> Color<span class="token punctuation">.</span>Green<span class="token punctuation">;</span></code></pre>
+<p>  或者，全部都采用手动赋值：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">enum</span> Color <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> Blue <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">}</span>
+      <span class="token keyword">let</span> c<span class="token punctuation">:</span> Color <span class="token operator">=</span> Color<span class="token punctuation">.</span>Green<span class="token punctuation">;</span></code></pre>
+<p>  枚举类型提供的一个便利是你可以由枚举的值得到它的名字。 例如，我们知道数值为2，但是不确定它映射到Color里的哪个名字，我们可以查找相应的名字：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">enum</span> Color <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green<span class="token punctuation">,</span> Blue<span class="token punctuation">}</span>
+      <span class="token keyword">let</span> colorName<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> Color<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colorName<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 显示'Green'因为上面代码里它的值是2</span></code></pre>
 </li>
 </ul>
 <h3 id="2-3-基本数据类型——Any、Void"><a href="#2-3-基本数据类型——Any、Void" class="headerlink" title="2.3 基本数据类型——Any、Void"></a>2.3 基本数据类型——Any、Void</h3><h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
@@ -980,7 +987,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.2k</span>
+                <span class="white-color">19.3k</span>
             
 
             
