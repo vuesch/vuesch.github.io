@@ -408,14 +408,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        974
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        6 分
                     </div>
                     
                 
@@ -532,7 +532,43 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colorName<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 显示'Green'因为上面代码里它的值是2</span></code></pre>
 </li>
 </ul>
-<h3 id="2-3-基本数据类型——Any、Void"><a href="#2-3-基本数据类型——Any、Void" class="headerlink" title="2.3 基本数据类型——Any、Void"></a>2.3 基本数据类型——Any、Void</h3><h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
+<h3 id="2-3-基本数据类型——Any、Void、Object"><a href="#2-3-基本数据类型——Any、Void、Object" class="headerlink" title="2.3 基本数据类型——Any、Void、Object"></a>2.3 基本数据类型——Any、Void、Object</h3><ul>
+<li><p>Any<br>  有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。 这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。 这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。 那么我们可以使用<code>any</code>类型来标记这些变量：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">let</span> notSure<span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+      notSure <span class="token operator">=</span> <span class="token string">"maybe a string instead"</span><span class="token punctuation">;</span>
+      notSure <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// okay, definitely a boolean</span></code></pre>
+<p>  在对现有代码进行改写的时候，<code>any</code>类型是十分有用的，它允许你在编译时可选择地包含或移除类型检查。 你可能认为<code>Object</code>有相似的作用，就像它在其它语言中那样。 但是<code>Object</code>类型的变量只是允许你给它赋任意值 - 但是却不能够在它上面调用任意的方法，即便它真的有这些方法：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">let</span> notSure<span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+      notSure<span class="token punctuation">.</span><span class="token function">ifItExists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// okay, ifItExists might exist at runtime</span>
+      notSure<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// okay, toFixed exists (but the compiler doesn't check)</span>
+
+      <span class="token keyword">let</span> prettySure<span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+      prettySure<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error: Property 'toFixed' doesn't exist on type 'Object'.</span></code></pre>
+<p>  当你只知道一部分数据的类型时，<code>any</code>类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">let</span> list<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token string">"free"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>Void<br>  某种程度上来说，<code>void</code>类型像是与<code>any</code>类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是<code>void</code>：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">function</span> <span class="token function">warnUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"This is my warning message"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span></code></pre>
+<p>  声明一个<code>void</code>类型的变量没有什么大用，因为你只能为它赋予<code>undefined</code>和<code>null</code>：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">let</span> unusable<span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token operator">=</span> undefined<span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>Object<br>  <code>object</code>表示非原始类型，也就是除<code>number</code>，<code>string</code>，<code>boolean</code>，<code>symbol</code>，<code>null</code>或<code>undefined</code>之外的类型。<br>  使用<code>object</code>类型，就可以更好的表示像<code>Object.create</code>这样的<code>API</code>。例如：</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span>o<span class="token punctuation">:</span> object <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+
+      <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prop<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// OK</span>
+      <span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// OK</span>
+
+      <span class="token function">create</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error</span>
+      <span class="token function">create</span><span class="token punctuation">(</span><span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error</span>
+      <span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error</span>
+      <span class="token function">create</span><span class="token punctuation">(</span>undefined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error</span></code></pre>
+</li>
+</ul>
+<h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
             </div>
             <hr/>
 
@@ -814,12 +850,12 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ES5/" target="_blank">
-                        <span class="chip bg-color">ES5</span>
-                    </a>
-                    
                     <a href="/tags/JavaScript/" target="_blank">
                         <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/ES5/" target="_blank">
+                        <span class="chip bg-color">ES5</span>
                     </a>
                     
                 </div>
@@ -987,7 +1023,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.3k</span>
+                <span class="white-color">19.8k</span>
             
 
             
