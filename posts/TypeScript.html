@@ -408,7 +408,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        1.7k
                     </div>
                     
 
@@ -568,7 +568,25 @@
       <span class="token function">create</span><span class="token punctuation">(</span>undefined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Error</span></code></pre>
 </li>
 </ul>
-<h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
+<h3 id="3-1-TS函数——函数类型"><a href="#3-1-TS函数——函数类型" class="headerlink" title="3.1 TS函数——函数类型"></a>3.1 TS函数——函数类型</h3><ul>
+<li><p>函数<br>  和JavaScript一样，TypeScript函数可以创建有名字的函数和匿名函数。 你可以随意选择适合应用程序的方式，不论是定义一系列API函数还是只使用一次的函数。</p>
+<p>  通过下面的例子可以迅速回想起这两种JavaScript中的函数：</p>
+<pre class=" language-typescript"><code class="language-typescript">  <span class="token comment" spellcheck="true">// Named function</span>
+  <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// Anonymous function</span>
+  <span class="token keyword">let</span> myAdd <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>  在JavaScript里，函数可以使用函数体外部的变量。 当函数这么做时，我们说它‘捕获’了这些变量。 至于为什么可以这样做以及其中的利弊超出了本文的范围，但是深刻理解这个机制对学习JavaScript和TypeScript会很有帮助。</p>
+<pre class=" language-typescript"><code class="language-typescript">      <span class="token keyword">let</span> z <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">function</span> <span class="token function">addToZ</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> x <span class="token operator">+</span> y <span class="token operator">+</span> z<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<h3 id="3-2-TS函数——可选和默认参数"><a href="#3-2-TS函数——可选和默认参数" class="headerlink" title="3.2 TS函数——可选和默认参数"></a>3.2 TS函数——可选和默认参数</h3><h3 id="3-3-TS函数——可变参数"><a href="#3-3-TS函数——可变参数" class="headerlink" title="3.3 TS函数——可变参数"></a>3.3 TS函数——可变参数</h3><h2 id="二、Typescript入门【中】"><a href="#二、Typescript入门【中】" class="headerlink" title="二、Typescript入门【中】"></a>二、Typescript入门【中】</h2><h3 id="3-4-TS函数——Lambda和this关键字"><a href="#3-4-TS函数——Lambda和this关键字" class="headerlink" title="3.4 TS函数——Lambda和this关键字"></a>3.4 TS函数——Lambda和this关键字</h3><h3 id="3-5-TS函数——重载"><a href="#3-5-TS函数——重载" class="headerlink" title="3.5 TS函数——重载"></a>3.5 TS函数——重载</h3><h2 id="三、Typescript入门【下】"><a href="#三、Typescript入门【下】" class="headerlink" title="三、Typescript入门【下】"></a>三、Typescript入门【下】</h2><h2 id="四、Typescript入门【终】"><a href="#四、Typescript入门【终】" class="headerlink" title="四、Typescript入门【终】"></a>四、Typescript入门【终】</h2>
             </div>
             <hr/>
 
@@ -1023,7 +1041,7 @@ gitment.render('gitment-content');
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19.8k</span>
+                <span class="white-color">20k</span>
             
 
             
