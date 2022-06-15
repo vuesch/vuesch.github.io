@@ -6,7 +6,7 @@
   <link href="http://vuesch.github.io/atom.xml" rel="self"/>
   
   <link href="http://vuesch.github.io/"/>
-  <updated>2022-04-06T15:44:42.112Z</updated>
+  <updated>2022-06-15T14:05:28.314Z</updated>
   <id>http://vuesch.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx的反向代理与负载均衡</title>
+    <link href="http://vuesch.github.io/posts/nginx.html"/>
+    <id>http://vuesch.github.io/posts/nginx.html</id>
+    <published>2022-06-15T13:41:17.000Z</published>
+    <updated>2022-06-15T14:05:28.314Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一、什么是反向代理与负载均衡&quot;&gt;&lt;a href=&quot;#一、什么是反向代理与负载均衡&quot; class=&quot;headerlink&quot; title=&quot;一、什么是反向代理与负载均衡&quot;&gt;&lt;/a&gt;一、什么是反向代理与负载均衡&lt;/h1&gt;&lt;h4 id=&quot;①-反向代理&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Nginx" scheme="http://vuesch.github.io/tags/Nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序开发从基础到实战</title>
@@ -306,18 +329,18 @@
   </entry>
   
   <entry>
-    <title>JavaScript高级程序设计2</title>
-    <link href="http://vuesch.github.io/posts/JavaScript2.html"/>
-    <id>http://vuesch.github.io/posts/JavaScript2.html</id>
+    <title>JavaScript高级程序设计1</title>
+    <link href="http://vuesch.github.io/posts/JavaScript1.html"/>
+    <id>http://vuesch.github.io/posts/JavaScript1.html</id>
     <published>2019-09-25T02:54:10.000Z</published>
-    <updated>2021-07-13T09:02:10.054Z</updated>
+    <updated>2021-07-13T09:02:03.987Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;第一章-JavaScript简介&quot;&gt;&lt;a href=&quot;#第一章-JavaScript简介&quot; class=&quot;headerlink&quot; title=&quot;第一章 JavaScript简介&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
@@ -331,18 +354,18 @@
   </entry>
   
   <entry>
-    <title>JavaScript高级程序设计1</title>
-    <link href="http://vuesch.github.io/posts/JavaScript1.html"/>
-    <id>http://vuesch.github.io/posts/JavaScript1.html</id>
+    <title>JavaScript高级程序设计2</title>
+    <link href="http://vuesch.github.io/posts/JavaScript2.html"/>
+    <id>http://vuesch.github.io/posts/JavaScript2.html</id>
     <published>2019-09-25T02:54:10.000Z</published>
-    <updated>2021-07-13T09:02:03.987Z</updated>
+    <updated>2021-07-13T09:02:10.054Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;第一章-JavaScript简介&quot;&gt;&lt;a href=&quot;#第一章-JavaScript简介&quot; class=&quot;headerlink&quot; title=&quot;第一章 JavaScript简介&quot;&gt;&lt;/a&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;第十九章-E4X&quot;&gt;&lt;a href=&quot;#第十九章-E4X&quot; class=&quot;headerlink&quot; title=&quot;第十九章 E4X&quot;&gt;&lt;/a&gt;第十九章 E4X&lt;/h2&gt;&lt;h3 id=&quot;19-1-E4X的类型&quot;&gt;&lt;a href=&quot;#19-1-E4X的类型&quot;</summary>
         
       
     
