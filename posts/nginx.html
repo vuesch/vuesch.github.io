@@ -487,7 +487,20 @@
 <li>8.打开Nginx具体安装目录 查看配置文件 &#x2F;usrlocal&#x2F;etc&#x2F;nginx&#x2F;</li>
 <li>9.验证配置文件 nginx-t-c 自己的配置文件地址</li>
 <li>10.拷贝配置文件至Node 项目目录 重新修改</li>
-<li>11.服务器端的 nginx地址</li>
+<li>11.服务器端的 nginx地址 &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;</li>
+<li>12.几条盖世绝学<pre class=" language-bash"><code class="language-bash">  <span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> node
+  <span class="token function">lsof</span> -i tcp:8081
+  <span class="token function">kill</span> -9 pid
+  <span class="token function">ssh</span> 用户名@地址（配置免密登录）
+  <span class="token function">scp</span> course-map.json root@ip:/路径
+  <span class="token function">scp</span> -r advance/ root@ip:/路径
+</code></pre>
+</li>
+<li>13.npm install –production 只管上线环境</li>
+<li>14.pm2动态检测文件<ul>
+<li>14-1</li>
+</ul>
+</li>
 </ul>
 
                 
