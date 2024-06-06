@@ -133,9 +133,9 @@
     <category term="JavaScript" scheme="http://vuesch.github.io/categories/js/"/>
     
     
-    <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
-    
     <category term="设计模式" scheme="http://vuesch.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -161,7 +161,7 @@
     <link href="http://vuesch.github.io/posts/Node.html"/>
     <id>http://vuesch.github.io/posts/Node.html</id>
     <published>2020-03-05T16:37:02.000Z</published>
-    <updated>2022-04-12T05:08:01.909Z</updated>
+    <updated>2022-08-31T14:25:40.411Z</updated>
     
     
       
@@ -202,9 +202,9 @@
     <category term="JavaScript" scheme="http://vuesch.github.io/categories/js/"/>
     
     
-    <category term="ES5" scheme="http://vuesch.github.io/tags/ES5/"/>
-    
     <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
+    
+    <category term="ES5" scheme="http://vuesch.github.io/tags/ES5/"/>
     
   </entry>
   
