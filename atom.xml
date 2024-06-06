@@ -133,9 +133,9 @@
     <category term="JavaScript" scheme="http://vuesch.github.io/categories/js/"/>
     
     
-    <category term="设计模式" scheme="http://vuesch.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
     <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
+    
+    <category term="设计模式" scheme="http://vuesch.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -202,9 +202,9 @@
     <category term="JavaScript" scheme="http://vuesch.github.io/categories/js/"/>
     
     
-    <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
-    
     <category term="ES5" scheme="http://vuesch.github.io/tags/ES5/"/>
+    
+    <category term="JavaScript" scheme="http://vuesch.github.io/tags/JavaScript/"/>
     
   </entry>
   
